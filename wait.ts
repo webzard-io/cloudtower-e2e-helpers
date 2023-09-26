@@ -7,7 +7,7 @@ export function waitUntil<TData>(
   fn: () => Promise<TData>,
   wait?: Wait
 ): Promise<TData> {
-  const { timeout = 60, interval = 3 } = wait || {};
+  const { timeout = 30, interval = 3 } = wait || {};
   return new Promise((resolve, reject) => {
     const start = Date.now();
     const timeoutMs = timeout * 1000;
