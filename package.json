@@ -1,0 +1,19 @@
+{
+  "name": "cloudtower-e2e-helpers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webzard-io/cloudtower-e2e-helpers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webzard-io/cloudtower-e2e-helpers/issues"
+  },
+  "homepage": "https://github.com/webzard-io/cloudtower-e2e-helpers#readme"
+}
