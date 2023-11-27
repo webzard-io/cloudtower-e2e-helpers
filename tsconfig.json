@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ESNext",
+    "lib": ["ES2015"],
+    "strict": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDirs": ["src"],
+    "outDir": "lib",
+    "declaration": true,
+    "declarationDir": "typings"
+  }
+}

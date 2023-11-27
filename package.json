@@ -1,9 +1,12 @@
 {
   "name": "cloudtower-e2e-helpers",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "typings/index.d.ts",
+  "files": ["lib", "typings"],
   "scripts": {
+    "build": "rm -rf lib && tsc"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/webzard-io/cloudtower-e2e-helpers/issues"
   },
-  "homepage": "https://github.com/webzard-io/cloudtower-e2e-helpers#readme"
+  "homepage": "https://github.com/webzard-io/cloudtower-e2e-helpers#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
 }

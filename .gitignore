@@ -131,3 +131,6 @@ dist
 
 # editor
 .vscode
+
+lib
+typings
