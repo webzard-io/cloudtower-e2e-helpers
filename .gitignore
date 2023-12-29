@@ -131,6 +131,7 @@ dist
 
 # editor
 .vscode
+.idea
 
 lib
 typings
