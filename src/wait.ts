@@ -5,9 +5,19 @@ export type Wait = Partial<{
 
 export function waitUntil<TData>(
   fn: () => Promise<TData>,
-  wait?: Wait
+  wait?: Wait,
+  options?: {
+    /**
+     * By default, if `fn` throws an error, `waitUntil`
+     * will not reject until `wait.timeout` is exceeded.
+     * If you want `waitUntil` rejects once `fn` throws
+     * an error, set failFast to true.
+     */
+    failFast?: boolean;
+  }
 ): Promise<TData> {
   const { timeout = 30, interval = 3 } = wait || {};
+  const { failFast = false } = options || {}
   return new Promise((resolve, reject) => {
     const start = Date.now();
     const timeoutMs = timeout * 1000;
@@ -25,10 +35,15 @@ export function waitUntil<TData>(
         err = error;
       }
 
-      if (Date.now() - start > timeoutMs) {
+      const _reject = (reason: any) => {
         clearInterval(timer);
-        reject(`timeout after ${timeout}s, error: ${err}`);
-      }
+        reject(reason);
+      };
+      if (Date.now() - start > timeoutMs) {
+        _reject(`timeout after ${timeout}s, error: ${err}`);
+      } else if (failFast && err) {
+        _reject(err);
+      };
     };
 
     callFn();
